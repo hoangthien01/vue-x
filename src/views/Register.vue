@@ -6,8 +6,8 @@
       <input type="text" class="form-control" v-model="user.email" required />
       <p class="input-name">USERNAME</p>
       <input type="text" class="form-control" v-model="user.name" required />
-      <p class="input-name">PASSWORD</p>
-      <input type="password" class="form-control" v-model="user.passWord" required />
+      <p class="input-name" >PASSWORD</p>
+      <input type="password" class="form-control" :maxlength="16" v-model="user.passWord" required />
       <p class="input-name">PHONE NUMBER</p>
       <input type="text" class="form-control" v-model="user.phoneNumber" required />
       <button type="submit" class="btn-register">Register</button>
