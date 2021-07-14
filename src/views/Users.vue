@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Nav @searchUsers="searchUsersByName"></Nav>
+  <Nav @searchUsers="searchUsersByName" ></Nav>
   <div class="home-contain">
     <h1 class="title">List Users</h1>
     <div class="list-users">
@@ -32,13 +32,10 @@ export default {
   ]),
   methods: {
     ...mapMutations([
-      'SET_CURRENTUSER'
+      'SET_CURRENTUSER','GET_USERSBYNAME'
      ]),
     searchUsersByName(nameUser) {
-      this.user = this.users.filter((user)=> {
-        return user.name === nameUser
-      })
-      console.log(this.user)
+      this.GET_USERSBYNAME(nameUser)
     },
     clickUser(id) {
       this.SET_CURRENTUSER(id)
@@ -62,7 +59,7 @@ export default {
   color: rgba(250, 250, 250, 0.9);
 }
 .list-users {
-  background-color: rgba(250, 250, 250, 0.9);
+  background-color: rgba(250, 250, 250, 0.5);
   height: 500px;
   margin-top: 30px;
   padding: 20px;

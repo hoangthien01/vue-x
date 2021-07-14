@@ -45,7 +45,7 @@ export default {
       this.$emit("edited");
     },
     update() {
-      if (this.passWord === this.currentUser[0].passWord) {
+      if (this.passWord === this.currentUser.passWord) {
         this.wrongPassWord = false;
         switch (this.$refs.formName.textContent) {
           case "USERNAME":

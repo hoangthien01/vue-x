@@ -11,7 +11,7 @@
           <div class="image">
             <!-- <img :src="user.avatar" alt="" srcset="" /> -->
           </div>
-          <span>{{currentUser[0].name}}</span>
+          <span>{{currentUser.name}}</span>
         </div>
         <button class="btn-delete" @click="deleteUser">Delete</button>
       </div>
@@ -19,21 +19,21 @@
         <div class="line-wrap">
           <div>
             <p class="title">USERNAME</p>
-            <p class="sub-title">{{ currentUser[0].name }}</p>
+            <p class="sub-title">{{ currentUser.name }}</p>
           </div>
           <button class="btn-edit" @click="changeName = true">Edit</button>
         </div>
         <div class="line-wrap">
           <div>
             <p class="title">EMAIL</p>
-            <p class="sub-title">{{currentUser[0].email}}</p>
+            <p class="sub-title">{{currentUser.email}}</p>
           </div>
           <button class="btn-edit" @click="changeEmail = true">Edit</button>
         </div>
         <div class="line-wrap">
           <div>
             <p class="title">PHONENUMBER</p>
-            <p class="sub-title">{{ currentUser[0].phoneNumber }}</p>
+            <p class="sub-title">{{ currentUser.phoneNumber }}</p>
           </div>
           <button class="btn-edit" @click="changePhone = true">Edit</button>
         </div>

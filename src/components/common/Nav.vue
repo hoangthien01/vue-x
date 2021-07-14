@@ -6,11 +6,11 @@
     </div>
     <div class="profile">
       <div class="image">
-        <!-- <img :src="currentUser.avatar" alt="" srcset="" /> -->
+        <!-- <img :src="userLogin.avatar" alt="" srcset="" /> -->
       </div>
-      <span class="name-user">{{ currentUser.name }}</span>
+      <span class="name-user">{{ userLogin.name }}</span>
       <div class="profile-content">
-        <p class="title">Hi, {{ currentUser.name }}</p>
+        <p class="title">Hi, {{ userLogin.name }}</p>
         <ul class="list-setting">
           <li><i class="fas fa-folder"></i>Manage Subcription</li>
           <li><i class="fas fa-cog"></i>Setting</li>
@@ -29,12 +29,11 @@ export default {
   data() {
     return {
       inputSearch: "",
-      idUser: "",
       user: {},
     };
   },
   computed: mapState([
-    'currentUser'
+    'userLogin'
   ]),
   methods : {
     search () {

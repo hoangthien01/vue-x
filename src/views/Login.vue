@@ -31,25 +31,28 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 export default {
   data() {
     return {
       email: "",
       passWord: "",
       wrongPassWord: false,
-      user: [],
+      user: {}
     };
   },
    computed: mapState([
     'users'
   ]),
   methods: {
+    ...mapMutations([
+      'SET_USERLOGIN'
+    ]),
     login() {
-      this.user = this.users.filter((user) => {
-        return (user.email === this.email && user.passWord === this.passWord)
-      })  
-      if( this.user.length === 1 ) {
+      this.user= this.users[ this.users.findIndex(c => c.email ===  this.email && c.passWord === this.passWord)]
+      if( this.user !== null ) {
+        this.SET_USERLOGIN(this.user.id)
+        console.log(this.user.id)
         this.$router.push('/users')
       } else this.wrongPassWord = true;
     },
